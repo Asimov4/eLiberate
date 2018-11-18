@@ -1,0 +1,30 @@
+{
+  "name": "eliberate",
+  "version": "1.0.0",
+  "description": "eLiberate =========",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "babel-runtime": "^6.23.0",
+    "bcrypt": "^3.0.2",
+    "mup": "^1.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daposy/eLiberate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daposy/eLiberate/issues"
+  },
+  "homepage": "https://github.com/daposy/eLiberate#readme"
+}
