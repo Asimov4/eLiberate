@@ -80,7 +80,7 @@ jobs:
       - run:
           name: test sample junit
           command: |
-            mv ~/repo/junit.xml ~repo/test-results/jest
+            cp ~/repo/junit.xml ~repo/test-results/jest
       - store_test_results:
           path: test-results
 
