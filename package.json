@@ -18,7 +18,8 @@
     "mocha-junit-reporter": "^1.18.0"
   },
   "scripts": {
-    "test": "MOCHA_FILE=test-results/mocha/results.xml mocha tests/unit/*.js --reporter mocha-junit-reporter"
+    "test:e2e": "echo 'does nothing yet'",
+    "test:unit": "MOCHA_FILE=test-results/mocha/results.xml mocha tests/unit/*.js --reporter mocha-junit-reporter"
   },
   "repository": {
     "type": "git",
