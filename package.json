@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test:e2e": "echo 'does nothing yet'",
-    "test:unit": "MOCHA_FILE=test-results/mocha/results.xml mocha tests/unit/*.js --reporter mocha-junit-reporter"
+    "test:unit": "MOCHA_FILE=test-results/mocha/results.xml mocha -u tdd tests/unit/*.js --reporter mocha-junit-reporter"
   },
   "repository": {
     "type": "git",
