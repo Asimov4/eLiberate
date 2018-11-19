@@ -39,7 +39,7 @@ jobs:
       - run:
         command: SERVER_TEST_REPORTER=xunit XUNIT_FILE=$PWD/test-results/mocha/results.xml meteor test --once --driver-package meteortesting:mocha
         environment:
-            MOCHA_FILE: ~/repo/test-results/mocha/results.xml
+          MOCHA_FILE: ~/repo/test-results/mocha/results.xml
       - store_test_results:
           path: test-results
 
