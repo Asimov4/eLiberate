@@ -36,6 +36,7 @@ jobs:
       #     key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: meteor test --once --driver-package meteortesting:mocha
-
+      - run: SERVER_TEST_REPORTER=xunit XUNIT_FILE=$PWD/unit.xml meteor test --once --driver-package meteortesting:mocha
+      - store_test_results:
+        path: ~/repo/unit.xml
 
