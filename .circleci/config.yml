@@ -79,6 +79,8 @@ jobs:
             cp /usr/local/bin/meteor ~/build-temp/meteor-bin
       - store_test_results:
           path: test-results
+      - store_artifacts:
+          path: test-results
 
 workflows:
   version: 2
