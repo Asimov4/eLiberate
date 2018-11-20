@@ -9,9 +9,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "babel-runtime": "^6.23.0",
-    "bcrypt": "^3.0.2",
-    "mup": "^1.3.3"
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^3.0.2"
   },
   "devDependencies": {
     "mocha": "^5.2.0",

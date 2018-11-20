@@ -18,3 +18,5 @@ typings/*
 
 # test results
 test-results/*
+
+.meteor
