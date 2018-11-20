@@ -13,12 +13,22 @@
     "bcrypt": "^3.0.2"
   },
   "devDependencies": {
-    "mocha": "^5.2.0",
-    "mocha-junit-reporter": "^1.18.0"
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-meteor": "^5.1.0",
+    "eslint-plugin-react": "^7.11.1"
   },
   "scripts": {
+    "start": "meteor",
+    "pretest": "npm run lint --silent",
     "test:e2e": "echo 'does nothing yet'",
-    "test:unit": "MOCHA_FILE=test-results/mocha/results.xml mocha -u tdd tests/unit/*.js --reporter mocha-junit-reporter"
+    "test:unit": "SERVER_TEST_REPORTER=xunit XUNIT_FILE=$PWD/test-results/mocha/results.xml meteor test --driver-package meteortesting:mocha --once",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -29,5 +39,52 @@
   "bugs": {
     "url": "https://github.com/daposy/eLiberate/issues"
   },
-  "homepage": "https://github.com/daposy/eLiberate#readme"
+  "homepage": "https://github.com/daposy/eLiberate#readme",
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "allowImportExportEverywhere": true
+    },
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:meteor/recommended"
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": "off",
+      "import/prefer-default-export": "off",
+      "no-underscore-dangle": "off",
+      "object-shorthand": [
+        "error",
+        "always",
+        {
+          "avoidQuotes": false
+        }
+      ],
+      "meteor/eventmap-params": [
+        "error",
+        {
+          "eventParamName": "event",
+          "templateInstanceParamName": "instance"
+        }
+      ],
+      "meteor/template-names": [
+        "off"
+      ]
+    },
+    "settings": {
+      "import/resolver": "meteor"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
+  }
 }
