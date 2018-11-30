@@ -1,5 +1,25 @@
 if(Meteor.isClient) {
 	$(window).load(function(){
+		$('#preloader').fadeOut(0, function() {
+			$('body').css('overflow', 'visible');
+
+			//trigger css3 animations
+			// $('.animated').each(function() {
+			// 	var elem = $(this);
+				// var animation = elem.data('animation');
+				// if (!elem.hasClass('visible') && elem.attr('data-animation') !== undefined) {
+				// 	if (elem.attr('data-animation-delay') !== undefined) {
+				// 		var timeout = elem.data('animation-delay');
+				// 		setTimeout(function() {
+				// 			elem.addClass(animation + " visible");
+				// 		}, timeout);
+				// 	} else {
+				// 		elem.addClass(elem.data('animation') + " visible");
+				// 	}
+				// }
+			// });
+		});
+
 		$("#menu-toggle").on("click", function(e) {
 			e.preventDefault();
 			if($("#menu-toggle").hasClass("bt-menu-open")){
@@ -41,7 +61,7 @@ if(Meteor.isClient) {
 
 		}else{
 			$("#sidebar-wrapper").removeClass("active");
-			// $("#modal-nav").slideDown("fast");
+			$("#modal-nav").slideDown("fast");
 			$("#modal-nav").addClass("active");
 			$("#menu-toggle").hide();
 		}

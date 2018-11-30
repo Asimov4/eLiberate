@@ -127,7 +127,6 @@ input[type="email"] {
 .divider i {
   font-size: 30px;
 }
-<<<<<<< HEAD
 .divider:before,
 .divider:after {
   box-sizing: border-box;
@@ -139,18 +138,6 @@ input[type="email"] {
   position: absolute;
   top: 35px;
   width: 45%;
-=======
-.divider:before, .divider:after {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
-    content: "";
-    height: 1px;
-    max-width: 400px;
-    position: absolute;
-    top: 35px;
-    width: 45%;
->>>>>>> fix_slide_in
 }
 .divider:before {
   left: 0;
@@ -290,7 +277,6 @@ input[type="email"] {
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-<<<<<<< HEAD
   text-indent: 10px;
   opacity: 0;
   position: relative;
@@ -302,20 +288,6 @@ input[type="email"] {
 }
 .sidebar-nav li a .fa {
   padding-right: 10px;
-=======
-    text-indent: 10px;
-    opacity:0;
-    position:relative;
-    left:100px;
-}
- .active .sidebar-nav li a {
-    opacity:1;
-    left:0px;
-
-}
-.sidebar-nav li a .fa{
-	padding-right:10px;
->>>>>>> fix_slide_in
 }
 .sidebar-nav li a:hover {
   color: #fff;
@@ -556,17 +528,10 @@ input[type="email"] {
 footer {
   padding-top: 50px;
 }
-<<<<<<< HEAD
 footer .social-icons a {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   border-radius: 3px;
-=======
-footer .social-icons a{
-    box-sizing: border-box;
-	-moz-box-sizing: border-box;
-    border-radius: 3px;
->>>>>>> fix_slide_in
   text-align: center;
   width: 30px;
   height: 30px;
