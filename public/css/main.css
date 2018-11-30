@@ -5,12 +5,6 @@ Author URI: http://www.createbrilliance.com
 Version: 2.2
 */
 
-html,body {
-
-}
-
-
-
 body {
 	background:#000;
     background: url("/images/blurry-lights-9805.jpg") no-repeat center center fixed;
@@ -119,6 +113,7 @@ input[type=email]
 	font-size:30px;
 }
 .divider:before, .divider:after {
+    box-sizing: border-box;
     -moz-box-sizing: border-box;
     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
     content: "";
@@ -277,31 +272,6 @@ input[type=email]
     left:0px;
 
 }
-.active .sidebar-nav li:nth-child(2) a{
-
- 	-webkit-transition:all 0.3s ease-out;
--moz-transition:all 0.3s  ease-out;
--o-transition:all 0.3s  ease-out;
-transition:all 0.3s  ease-out;
- }
- .active .sidebar-nav li:nth-child(3) a{
- 	-webkit-transition:all 0.6s ease-out;
--moz-transition:all 0.6s ease-out;
--o-transition:all 0.6s ease-out;
-transition:all 0.6s ease-out;
- }
- .active .sidebar-nav li:nth-child(4) a{
- 	-webkit-transition:all 0.9s ease-out;
--moz-transition:all 0.9s ease-out;
--o-transition:all 0.9s ease-out;
-transition:all 0.9s ease-out;
- }
- .active .sidebar-nav li:nth-child(5) a{
- 	-webkit-transition:all 0.9s ease-out;
--moz-transition:all 1.2s ease-out;
--o-transition:all 1.2s ease-out;
-transition:all 1.2s ease-out;
- }
 .sidebar-nav li a .fa{
 	padding-right:10px;
 }
@@ -549,6 +519,7 @@ footer {
 	padding-top: 50px;
 }
 footer .social-icons a{
+    box-sizing: border-box;
 	-moz-box-sizing: border-box;
     border-radius: 3px;
   text-align: center;
