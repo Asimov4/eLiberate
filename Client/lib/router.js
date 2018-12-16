@@ -17,3 +17,15 @@ FlowRouter.route("/about", {
     BlazeLayout.render("main", { content: "aboutTemplate" });
   }
 });
+FlowRouter.route("/meetings", {
+  name: "meeting",
+  action: function() {
+    BlazeLayout.render("main", { content: "meetingsTemplate" });
+  }
+});
+FlowRouter.route("/organizations", {
+  name: "organization",
+  action: function() {
+    BlazeLayout.render("main", { content: "organizationsTemplate" });
+  }
+});
