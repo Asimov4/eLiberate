@@ -23,9 +23,10 @@ if(Meteor.isServer) {
 
 		sendEmail: function(comment, fromEmail) {
 			return Email.send({
-				to: "nathan.clinton@gmail.com", /* douglas@publicsphereproject.org; */
+				// to: "douglas@publicsphereproject.org",
+				to: "daniel@endqwerty.com",
 				from: fromEmail,
-				subject: "eLiberate contact/feedback",
+				subject: "eLiberate contact and feedback",
 				text: comment
 			});
 		},

@@ -8,9 +8,11 @@
     "test": "tests"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
+    "@babel/runtime": "^7.2.0",
     "babel-runtime": "^6.26.0",
-    "bcrypt": "^3.0.2"
+    "bcrypt": "^3.0.2",
+    "popper": "^1.0.1",
+    "popper.js": "^1.14.6"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -25,6 +27,7 @@
   },
   "scripts": {
     "start": "meteor",
+    "debug": "meteor run --inspect",
     "pretest": "npm run lint --silent",
     "test:e2e": "echo 'does nothing yet'",
     "test:unit": "SERVER_TEST_REPORTER=xunit XUNIT_FILE=$PWD/test-results/mocha/results.xml meteor test --driver-package meteortesting:mocha --once",
