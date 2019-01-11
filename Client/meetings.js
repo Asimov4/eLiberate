@@ -1,5 +1,4 @@
 if(Meteor.isClient) {
-
 		ShowDefaultMeetingAdminControls = function(id) {
 			$('tr[org-id="' + id + '"] #meeting-name-edit').show();
 			$('tr[org-id="' + id + '"] #meeting-name-save').hide();
@@ -89,24 +88,24 @@ if(Meteor.isClient) {
 		}
 	});
 
-	Template.meetingSidebar.helpers({
-		meetingsExist: function() {
-			return Meetings.find({$or: [{ startDateTime: {"$gte": new Date()}}, { status: MEETINGSTATUS.pending}]}).count() > 0;
-		},
+	// Template.meetingSidebar.helpers({
+	// 	meetingsExist: function() {
+	// 		return Meetings.find({$or: [{ startDateTime: {"$gte": new Date()}}, { status: MEETINGSTATUS.pending}]}).count() > 0;
+	// 	},
 
-		activeAndUpcomingMeetings: function() {
-			return Meetings.find({$or: [{ startDateTime: {"$gte": new Date()}}, { status: MEETINGSTATUS.pending }, { status: MEETINGSTATUS.started }]}, { sort: { startDateTime: 1 }});
-		},
+	// 	activeAndUpcomingMeetings: function() {
+	// 		return Meetings.find({$or: [{ startDateTime: {"$gte": new Date()}}, { status: MEETINGSTATUS.pending }, { status: MEETINGSTATUS.started }]}, { sort: { startDateTime: 1 }});
+	// 	},
 
-		attendance: function() {
-			return Attendees.find({meetingId: this._id}).count();
-		}
-	});
+	// 	attendance: function() {
+	// 		return Attendees.find({meetingId: this._id}).count();
+	// 	}
+	// });
 
 	Template.meetingSidebar.events({
 		'click .meeting-button': function() {
 			joinMeeting(this._id, this.organizationId, this.ruleset);
-		}	
+		}
 	});
 
 	joinMeeting = function(meetingId, organizationId, ruleset) {

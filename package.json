@@ -10,20 +10,20 @@
   "dependencies": {
     "@babel/runtime": "^7.2.0",
     "babel-runtime": "^6.26.0",
-    "bcrypt": "^3.0.2",
+    "bcrypt": "^3.0.3",
     "popper": "^1.0.1",
     "popper.js": "^1.14.6"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
-    "eslint": "^5.9.0",
+    "eslint": "^5.11.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-import-resolver-meteor": "^0.4.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-meteor": "^5.1.0",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.12.0"
   },
   "scripts": {
     "start": "meteor",
