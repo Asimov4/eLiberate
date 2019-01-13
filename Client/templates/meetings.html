@@ -6,6 +6,9 @@
         <thead>
           <tr>
             <th>
+              Action
+            </th>
+            <th>
               Meeting Title
             </th>
             <th>
@@ -28,6 +31,14 @@
         <tbody>
           {{#each meetings}}
             <tr>
+              <td>
+                  {{#if isAdmin}}
+                  <i id="meeting-name-edit" class="fa fa-pencil"></i>
+                  <i id="meeting-name-save" style="display: none;" class="fa fa-floppy-o"></i>
+                  <i id="meeting-name-delete" style="display: none;" class="fa fa-trash"></i>
+                  <i id="meeting-name-cancel" style="display: none;" class="fa fa-close"></i>
+                  {{/if}}
+              </td>
               <td>
                 <a href="#" id="meetingId">{{name}}</a>
                 <input type="text" id="meeting-name-txt" style="display: none;" value="{{name}}" />
@@ -91,14 +102,6 @@
                   {{/if}}
                 </div>
               </td>
-              <td>
-    						{{#if isAdmin}}
-    						<i id="meeting-name-edit" class="fa fa-pencil"></i>
-    						<i id="meeting-name-save" style="display: none;" class="fa fa-floppy-o"></i>
-    						<i id="meeting-name-delete" style="display: none;" class="fa fa-trash"></i>
-    						<i id="meeting-name-cancel" style="display: none;" class="fa fa-close"></i>
-    						{{/if}}
-    					</td>
             </tr>
           {{/each}}
         </tbody>
@@ -118,6 +121,8 @@
             <td>
               <input type="date" id="newMeetingEndDate" />
       				<input type="time" id="newMeetingEndTime" />
+            </td>
+            <td>
             </td>
             <td>
               <select id="newRuleset">
