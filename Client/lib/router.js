@@ -35,3 +35,9 @@ FlowRouter.route("/upcoming", {
     BlazeLayout.render("main", { content: "upcomingMeetings" });
   }
 });
+FlowRouter.route("/messages", {
+  name: "message",
+  action: function () {
+    BlazeLayout.render("main", { content: "messageTemplates" });
+  }
+});

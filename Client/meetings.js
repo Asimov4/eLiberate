@@ -134,6 +134,8 @@ if (Meteor.isClient) {
 
 		// Trigger our custom event
 		$(document).trigger("joinedMeeting");
+
+		FlowRouter.go('message');
 	}
 
 	// Global function because it's used in the signout event
