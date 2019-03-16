@@ -41,3 +41,9 @@ FlowRouter.route("/messages", {
     BlazeLayout.render("main", { content: "messageTemplates" });
   }
 });
+FlowRouter.route("/profiles", {
+  name: "profile",
+  action: function () {
+    BlazeLayout.render("main", { content: "profileTemplate" });
+  }
+});
