@@ -1,3 +1,5 @@
+import utils from '../lib/util.js';
+
 if(Meteor.isClient) {
 	SubmittedCommands = [];
 	var LastMeetingPart = '';
@@ -9,6 +11,8 @@ if(Meteor.isClient) {
 	GetLastCommand = function() {
 		return SubmittedCommands[SubmittedCommands.length - 1];
 	}
+
+	showModal = utils.showModel;
 
 	// Checks to see if the meeting is currently in a motion.
 	// Certain commands can only be used if we are dealing with an open motion.
@@ -717,8 +721,9 @@ if(Meteor.isClient) {
 			}
 		},
 
-		'click .dropdown-menu > li': function() {
-			var command = GetCommandPrototype($('#commandSelected')[0].innerText);
+		'click .dropdown-menu > li': function(e) {
+			// var command = GetCommandPrototype($('#commandSelected li')[0].innerText);
+			var command = GetCommandPrototype(e.target.innerText);
 			if(command.selected != undefined)
 			{
 				command.selected($('#newMessage'), CurrentMotion());
