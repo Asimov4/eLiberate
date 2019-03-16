@@ -23,8 +23,7 @@ if(Meteor.isServer) {
 
 		sendEmail: function(comment, fromEmail) {
 			return Email.send({
-				// to: "douglas@publicsphereproject.org",
-				to: "daniel@endqwerty.com",
+				to: "douglas@publicsphereproject.org",
 				from: fromEmail,
 				subject: "eLiberate contact and feedback",
 				text: comment
