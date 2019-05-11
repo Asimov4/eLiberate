@@ -5,29 +5,37 @@
 </template>
 
 <template name="robertsRulesOfOrderTools">
-  <div class="dropdown agenda">
-    <button class="dropbtn">Agenda</button>
-    <div class="dropdown-content">
-      {{#each agenda}}
-        {{#if agendaOccurred}}
-          <a href="#{{name}}"><i class="fas{{statusIcon}}"></i> {{name}}</a>
-        {{else}}
-          <a href="#"><i class="fas{{statusIcon}}"></i> {{name}}</a>
-        {{/if}}
-      {{/each}}
-    </div>
-  </div>
-  <div class="dropdown queue">
-    <button class="dropbtn">Queue ({{queueCount}})</button>
-    <div class="dropdown-content">
-      {{#each queue}}
-        <a href="#">
-          {{#if canRemoveFromQueue}}<i id="removeFromQueue" class="fa fa-ban"></i>{{/if}}
-          {{#if isChairperson}}<i id="recognize" class="fa fa-comment">{{userFloorCount}}</i>{{/if}}
-          {{#if hasTheFloor}}<i class="fa fa-star" style="color: goldenrod;"></i>{{/if}}
-          {{userName}}
-        </a>
-      {{/each}}
+  <div class="container-fluid robertsRulesOfOrderTools">
+    <div class="btn-group" role="group">
+      <div class="dropdown btn-group" role="group">
+        <button class="btn btn-default dropdown-toggle" type="button" id="agenda" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agenda <span class="caret"></span></button>
+          <ul class="dropdown-menu" aria-labelledby="agenda">
+          {{#each agenda}}
+            <li>
+              {{#if agendaOccurred}}
+                <a href="#{{name}}"><i class="fa{{statusIcon}}"></i> {{name}}</a>
+              {{else}}
+                <a href="#"><i class="fa{{statusIcon}}"></i> {{name}}</a>
+              {{/if}}
+            </li>
+          {{/each}}
+          </ul>
+      </div>
+      <div class="dropdown btn-group" role="group">
+        <button class="btn btn-default dropdown-toggle" type="button" id="queue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Queue ({{queueCount}}) <span class="caret"></span></button>
+          <ul class="dropdown-menu" aria-labelledby="queue">
+          {{#each queue}}
+            <li>
+              <a href="#">
+                {{#if canRemoveFromQueue}}<i id="removeFromQueue" class="fa fa-ban"></i>{{/if}}
+                {{#if isChairperson}}<i id="recognize" class="fa fa-comment">{{userFloorCount}}</i>{{/if}}
+                {{#if hasTheFloor}}<i class="fa fa-star" style="color: goldenrod;"></i>{{/if}}
+                {{userName}}
+              </a>
+            </li>
+          {{/each}}
+          </ul>
+      </div>
     </div>
   </div>
 </template>
