@@ -79,6 +79,10 @@ if (Meteor.isClient) {
 			}
 		},
 
+		'click #meeting-name-cancel': function () {
+			ShowDefaultMeetingAdminControls(this._id);
+		},
+
 		'click #addAgendaItem': function (evt) {
 			var item = $(evt.target).parent().find("#agendaContent").val();
 			Agendas.insert({ name: item, meetingId: this._id, ordinal: Agendas.find({ meetingId: this._id }).count(), status: AGENDASTATUS.pending });
