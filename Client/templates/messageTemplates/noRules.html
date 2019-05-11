@@ -2,7 +2,7 @@
   {{#if Template.subscriptionsReady}}
     {{#each meetingMessages}}
       <div class="message" style="background-color:{{backgroundColor}}">
-        <div class="messageHeader">
+        <div>
           Posted by
           {{#if this.userName}}
           	{{userName}}
@@ -18,7 +18,7 @@
   	  {{#markdown}}{{statement}}{{/markdown}}
       </div>
     {{/each}}
-    <nav id="messagesFooter" class="navbar navbar-default navbar-fixed-bottom">
+    <nav id="messagesFooter">
       <div class="container-fluid">
         {{> noRulesControls}}
       </div>
