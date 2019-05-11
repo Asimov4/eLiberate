@@ -72,6 +72,20 @@ if (Meteor.isClient) {
 			ShowEditMeetingAdminControls(this._id);
 		},
 
+		'click #meeting-name-save': function (evt) {
+			var meetingName = $(evt.target).parent().parent().find("#meeting-name-txt").val()
+			if (meetingName != undefined && meetingName != '') {
+				ValidateMeetingData("");
+
+				Meetings.update({ _id: this._id }, { $set: { name: meetingName, startDateTime: new Date($('#meeting-start-date').val() + ' ' + $('#meeting-start-time').val()), endDateTime: new Date($('#meeting-end-date').val() + ' ' + $('#meeting-end-time').val()) } });
+
+				ShowDefaultMeetingAdminControls(this._id);
+			}
+			else {
+				ValidateMeetingData("You must enter a name for the organization.");
+			}
+		},
+
 		'click #meeting-name-delete': function () {
 			var result = confirm("Are you sure you want to delete " + this.name + "?");
 			if (result) {
