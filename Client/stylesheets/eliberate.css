@@ -14,3 +14,7 @@ footer {
   color: gray;
   cursor: not-allowed;
 }
+
+.enabled {
+  cursor: pointer;
+}
