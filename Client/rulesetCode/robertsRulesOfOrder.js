@@ -601,13 +601,13 @@ if (Meteor.isClient) {
 
 		tooltipTag: function () {
 			return {
-				tooltip: this.tooltip,
+				title: this.tooltip,
 			}
 		}
 	});
 
 	Template.robertsRulesOfOrderControls.rendered = function () {
-		$('[data-toggle="tooltip"]').tooltip();
+		$('[data-toggle="title"]').tooltip();
 	}
 
 	Template.robertsRulesOfOrderControls.events({

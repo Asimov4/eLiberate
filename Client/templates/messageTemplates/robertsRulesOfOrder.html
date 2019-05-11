@@ -344,42 +344,38 @@
     </div>
   {{/if}}
   {{#if calledToOrder}}
-  	<div class="row">
-  		<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-    			<textarea id="newMessage"></textarea><br />
-          {{#each typers}}
-            <i>{{userName}} is typing...</i><br />
-          {{/each}}
-          {{#if hasTheFloor}}
-          <div class="alert alert-danger">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">x</a>
-            You have the floor!
-          </div>
-          {{/if}}
+  	<div>
+      {{#each typers}}
+        <i>{{userName}} is typing...</i><br />
+      {{/each}}
+      {{#if hasTheFloor}}
+      <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">x</a>
+        You have the floor!
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div id="commandDropdown" class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-            <span id="commandSelected">Actions</span>
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu" id="commandMenu" aria-labelledby="commandSelected">
-            {{#each commands}}
-              {{{seperator}}}
-              <li class="{{actionDisabled}}" data-toggle="tooltip" data-placement="right" {{tooltipTag}}>{{commandName}}</li>
-            {{/each}}
-          </ul>
-        </div>
+      {{/if}}
+	    <div id="commandDropdown" class="dropdown btn-group dropup col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+          <span id="commandSelected">Actions</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" id="commandMenu" aria-labelledby="commandSelected">
+          {{#each commands}}
+            {{{seperator}}}
+            <li class="{{actionDisabled}}" data-toggle="tooltip" data-placement="right" {{tooltipTag}}>{{commandName}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="form-group">
+        <textarea id="newMessage" class="form-control" rows="3"></textarea><br />
         <input type="button" id="newMessageSubmit" class="btn btn-default" value="Submit" {{allowToSubmit}}/>
         <button type="button" id="messagePreviewButton" class="btn btn-default show-modal" data-modal="preview">Preview</button>
         <input type="hidden" id="ruleset" />
         {{#unless isChairperson}}
         <input type="button" id="requestTheFloor" class="btn btn-default" value="Request the Floor" data-tooltip="Join the queue in order to speak or take most actions. You can queue several times. The chairperson must give you the floor before you can take an action."/>
         {{/unless}}
-  		</div>
-  	</div>
+      </div>
+		</div>
   {{/if}}
   {{#if adjourned}}
     <div class="alert alert-danger">
