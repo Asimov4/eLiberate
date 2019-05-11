@@ -30,7 +30,7 @@
         </thead>
         <tbody>
           {{#each meetings}}
-            <tr>
+            <tr meeting-id="{{_id}}">
               <td>
                   {{#if isAdmin}}
                   <i id="meeting-name-edit" class="fa fa-pencil"></i>

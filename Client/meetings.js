@@ -1,32 +1,32 @@
 if (Meteor.isClient) {
 	ShowDefaultMeetingAdminControls = function (id) {
-		$('tr[org-id="' + id + '"] #meeting-name-edit').show();
-		$('tr[org-id="' + id + '"] #meeting-name-save').hide();
-		$('tr[org-id="' + id + '"] #meeting-name-delete').hide();
-		$('tr[org-id="' + id + '"] #meeting-name-cancel').hide();
-		$('tr[org-id="' + id + '"] #meeting-name-edit').show();
-		$('tr[org-id="' + id + '"] #meeting-name-save').hide();
-		$('tr[org-id="' + id + '"] #meeting-name-delete').hide();
-		$('tr[org-id="' + id + '"] #meeting-name-cancel').hide();
-		$('tr[org-id="' + id + '"] #meetingId').show();
-		$('tr[org-id="' + id + '"] #meeting-start-date').hide();
-		$('tr[org-id="' + id + '"] #meeting-start-time').hide();
-		$('tr[org-id="' + id + '"] #meeting-end-date').hide();
-		$('tr[org-id="' + id + '"] #meeting-end-time').hide();
-		$('tr[org-id="' + id + '"] #meeting-name-txt').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-name-edit').show();
+		$('tr[meeting-id="' + id + '"] #meeting-name-save').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-name-delete').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-name-cancel').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-name-edit').show();
+		$('tr[meeting-id="' + id + '"] #meeting-name-save').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-name-delete').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-name-cancel').hide();
+		$('tr[meeting-id="' + id + '"] #meetingId').show();
+		$('tr[meeting-id="' + id + '"] #meeting-start-date').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-start-time').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-end-date').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-end-time').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-name-txt').hide();
 	}
 
 	ShowEditMeetingAdminControls = function (id) {
-		$('tr[org-id="' + id + '"] #meeting-name-edit').hide();
-		$('tr[org-id="' + id + '"] #meeting-name-save').show();
-		$('tr[org-id="' + id + '"] #meeting-name-delete').show();
-		$('tr[org-id="' + id + '"] #meeting-name-cancel').show();
-		$('tr[org-id="' + id + '"] #meetingId').hide();
-		$('tr[org-id="' + id + '"] #meeting-start-date').show();
-		$('tr[org-id="' + id + '"] #meeting-start-time').show();
-		$('tr[org-id="' + id + '"] #meeting-end-date').show();
-		$('tr[org-id="' + id + '"] #meeting-end-time').show();
-		$('tr[org-id="' + id + '"] #meeting-name-txt').show();
+		$('tr[meeting-id="' + id + '"] #meeting-name-edit').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-name-save').show();
+		$('tr[meeting-id="' + id + '"] #meeting-name-delete').show();
+		$('tr[meeting-id="' + id + '"] #meeting-name-cancel').show();
+		$('tr[meeting-id="' + id + '"] #meetingId').hide();
+		$('tr[meeting-id="' + id + '"] #meeting-start-date').show();
+		$('tr[meeting-id="' + id + '"] #meeting-start-time').show();
+		$('tr[meeting-id="' + id + '"] #meeting-end-date').show();
+		$('tr[meeting-id="' + id + '"] #meeting-end-time').show();
+		$('tr[meeting-id="' + id + '"] #meeting-name-txt').show();
 
 	}
 
@@ -67,8 +67,9 @@ if (Meteor.isClient) {
 			joinMeeting(this._id, this.organizationId, this.ruleset);
 		},
 
-		'click #editMeeting': function () {
+		'click #meeting-name-edit': function () {
 			Session.set("meetingId", this._id);
+			ShowEditMeetingAdminControls(this._id);
 		},
 
 		'click #addAgendaItem': function (evt) {
