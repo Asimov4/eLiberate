@@ -18,3 +18,8 @@ footer {
 .enabled {
   cursor: pointer;
 }
+
+#chatroom {
+  height: 400px;
+  overflow-y: scroll;
+}

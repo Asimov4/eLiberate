@@ -1,5 +1,6 @@
 <template name="noRulesMessages">
   {{#if Template.subscriptionsReady}}
+    <div id="chatroom">
     {{#each meetingMessages}}
       <div class="message" style="background-color:{{backgroundColor}}">
         <div>
@@ -18,7 +19,8 @@
   	  {{#markdown}}{{statement}}{{/markdown}}
       </div>
     {{/each}}
-    <nav id="messagesFooter">
+    </div>
+    <nav id="messagesFooter" class="navbar navbar-default">
       <div class="container-fluid">
         {{> noRulesControls}}
       </div>

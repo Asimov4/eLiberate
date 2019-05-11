@@ -34,10 +34,14 @@
 
 <template name="robertsRulesOfOrderMessages">
   {{#if Template.subscriptionsReady}}
+    <div id="chatroom">
     {{#each meetingMessages}}
+      <div class="message" style="background-color:{{backgroundColor}}">
       {{> Template.dynamic template=commandTemplate data=this }}
+      </div>
     {{/each}}
-    <nav id="messagesFooter" class="navbar navbar-default navbar-fixed-bottom">
+    </div>
+    <nav id="messagesFooter" class="navbar navbar-default">
       <div class="container-fluid">
         {{> robertsRulesOfOrderControls}}
       </div>
