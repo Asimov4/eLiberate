@@ -21,7 +21,6 @@ if (Meteor.isClient) {
 			},
 
 			this.execute = function () {
-				debugger;
 				if (this.validateCommand()) {
 					// Save the command
 					this._id = Messages.insert({ meetingId: this.meeting._id, dateTime: new Date(), userId: Meteor.userId(), userName: Meteor.user().username, commandType: this.commandType, statement: this.statement });
@@ -32,8 +31,9 @@ if (Meteor.isClient) {
 			},
 
 			this.validateCommand = function () {
+
 				var attendanceCount = Attendees.find({ meetingId: this.meeting._id }).count();
-				var members = Permissions.find({ organizationId: meeting.organizationId }).count();
+				var members = Permissions.find({ organizationId: meeting.organizationId, $or: [{ role: ROLES.administrator }, { role: ROLES.chairperson }, { role: ROLES.member }] }).count();
 
 				if (this.meeting.status == MEETINGSTATUS.pending &&
 					Session.get("role") == ROLES.chairperson &&
