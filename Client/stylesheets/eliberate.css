@@ -23,3 +23,7 @@ footer {
   height: 400px;
   overflow-y: scroll;
 }
+
+.separator {
+  padding-left: 20px;
+}

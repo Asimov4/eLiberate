@@ -583,16 +583,16 @@ if (Meteor.isClient) {
 			return "enabled";
 		},
 
-		seperator: function () {
-			seperatorHtml = "";
+		separator: function () {
+			separatorHtml = "";
 			if (this.meetingPart != LastMeetingPart ||
 				LastMeetingPart == "") {
-				seperatorHtml = "<li class='separator'><h4>" + this.meetingPart + "</h4></li>";
+				separatorHtml = "<li role='separator' class='divider'></li><li class='separator'><h4>" + this.meetingPart + "</h4></li>";
 			}
 
 			LastMeetingPart = this.meetingPart
 
-			return seperatorHtml;
+			return separatorHtml;
 		},
 
 		typers: function () {
