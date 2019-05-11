@@ -1,6 +1,6 @@
 <template name="robertsRulesOfOrderHeader">
   <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-    <i class="fas fa-comment"></i> {{isInDebate}}
+    <i class="fa fa-comment"></i> {{isInDebate}}
   </div>
 </template>
 
@@ -22,9 +22,9 @@
     <div class="dropdown-content">
       {{#each queue}}
         <a href="#">
-          {{#if canRemoveFromQueue}}<i id="removeFromQueue" class="fas fa-ban"></i>{{/if}}
-          {{#if isChairperson}}<i id="recognize" class="fas fa-comment">{{userFloorCount}}</i>{{/if}}
-          {{#if hasTheFloor}}<i class="fas fa-star" style="color: goldenrod;"></i>{{/if}}
+          {{#if canRemoveFromQueue}}<i id="removeFromQueue" class="fa fa-ban"></i>{{/if}}
+          {{#if isChairperson}}<i id="recognize" class="fa fa-comment">{{userFloorCount}}</i>{{/if}}
+          {{#if hasTheFloor}}<i class="fa fa-star" style="color: goldenrod;"></i>{{/if}}
           {{userName}}
         </a>
       {{/each}}
@@ -45,7 +45,7 @@
   {{else}}
     <div id="meeting_loading">
       <div id="spinner_container">
-        <h1><i class='fas fa-spinner fa-spin'></i></h1>
+        <h1><i class='fa fa-spinner fa-spin'></i></h1>
       </div>
     </div>
   {{/if}}
@@ -54,7 +54,7 @@
 <template name="robertsRulesOfOrderStandardCommand">
   <div class="message {{meetingPart}} indent-{{depth}}">
     <div class="messageHeader">
-      Posted by {{userName}} <i class="fas fa-clock-o"></i> {{prettifyDate dateTime}}
+      Posted by {{userName}} <i class="fa fa-clock-o"></i> {{prettifyDate dateTime}}
     </div>
     <h5>{{commandDisplayName}}</h5>
     {{#markdown}}{{statement}}{{/markdown}}
@@ -64,7 +64,7 @@
 <template name="robertsRulesOfOrderVotableCommand">
   <div class="message {{meetingPart}} indent-{{depth}}">
     <div class="messageHeader">
-      Posted by {{userName}} <i class="fas fa-clock-o"></i> {{prettifyDate dateTime}}
+      Posted by {{userName}} <i class="fa fa-clock-o"></i> {{prettifyDate dateTime}}
     </div>
     <h5>{{commandDisplayName}}</h5>
     {{#markdown}}{{statement}}{{/markdown}}
@@ -93,7 +93,7 @@
 <template name="PutToVoteCommand">
   <div class="message {{meetingPart}} indent-{{depth}}">
     <div class="messageHeader">
-      Posted by {{userName}} <i class="fas fa-clock-o"></i> {{prettifyDate dateTime}}
+      Posted by {{userName}} <i class="fa fa-clock-o"></i> {{prettifyDate dateTime}}
     </div>
     <h5>{{commandDisplayName}}</h5>
     {{#markdown}}{{statement}}{{/markdown}}
@@ -168,7 +168,7 @@
           <div class="modal-body">
             <div class="row">
               <div class="messageHeader">
-                Posted by {{userName}} <i class="fas fa-clock-o"></i> {{prettifyDate dateTime}}
+                Posted by {{userName}} <i class="fa fa-clock-o"></i> {{prettifyDate dateTime}}
               </div>
               <h5>{{commandDisplayName}}</h5>
               {{> Template.dynamic template="robertsRulesOfOrderStandardCommand" data=motionPutToVote }}
@@ -217,7 +217,7 @@
   <a class="agena-link" name="{{agendaName}}"></a>
   <div class="message {{meetingPart}} indent-{{depth}}">
     <div class="messageHeader">
-      Posted by {{userName}} <i class="fas fa-clock-o"></i> {{prettifyDate dateTime}}
+      Posted by {{userName}} <i class="fa fa-clock-o"></i> {{prettifyDate dateTime}}
     </div>
     <h5>{{commandDisplayName}} '{{agendaName}}'</h5>
   {{#markdown}}{{statement}}{{/markdown}}
@@ -227,7 +227,7 @@
 <template name="MakeAStatementCommand">
   <div class="message {{meetingPart}} indent-{{depth}}">
     <div class="messageHeader">
-      Posted by {{userName}} <i class="fas fa-clock-o"></i> {{prettifyDate dateTime}}
+      Posted by {{userName}} <i class="fa fa-clock-o"></i> {{prettifyDate dateTime}}
     </div>
   {{#markdown}}{{statement}}{{/markdown}}
   </div>
